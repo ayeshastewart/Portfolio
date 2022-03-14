@@ -23,7 +23,11 @@ public class VendingMachineCLI {
 	}
 
 	public void run() {
-		while (true) {
+		String[] activeMenu = MAIN_MENU_OPTIONS;
+
+		boolean run = true;
+		String userChoice = (String) menu.getChoiceFromOptions(activeMenu)
+		while (run) {
 			String choice = (String) menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
 
 			if (choice.equals(MAIN_MENU_OPTION_DISPLAY_ITEMS)) {
@@ -40,7 +44,7 @@ public class VendingMachineCLI {
 						menu.purchase();
 					}else if (secondChoice.equals(SECOND_MENU_OPTION_FINISH)){
 						menu.finish();
-						run();
+						activeMenu = MAIN_MENU_OPTIONS;
 					}else if (secondChoice.equals(SECOND_MENU_SALES_REPORT)){
 						menu.writeSalesReport();
 					}

@@ -31,7 +31,7 @@ public class Machine {
     }
 
     public double getFunds() {
-        BigDecimal bigDecimal = new BigDecimal(funds);
+        BigDecimal bigDecimal = new BigDecimal.valueOf(funds);
         bigDecimal = moneyObject.getMoneyBigDecimal(funds).setScale(2, RoundingMode.HALF_UP);
         funds = bigDecimal.doubleValue();
         return funds;
